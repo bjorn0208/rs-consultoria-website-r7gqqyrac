@@ -1,4 +1,4 @@
-import { Briefcase, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
+import { Scale, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
@@ -9,18 +9,23 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <Briefcase className="h-6 w-6 text-primary" />
+              <Scale className="h-6 w-6 text-primary" />
               <span className="text-xl font-bold text-white">RS Consultoria</span>
             </Link>
             <p className="text-sm text-slate-400 max-w-xs">
-              Transformando desafios complexos em estratégias claras e resultados excepcionais para
-              o seu negócio.
+              Atuação estratégica na gestão de demandas jurídicas e administrativas, com foco em
+              soluções eficientes e resultados concretos.
             </p>
             <div className="flex gap-4 pt-2">
               <a href="#" className="text-slate-400 hover:text-primary transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-primary transition-colors">
+              <a
+                href="https://instagram.com/rafaellas_ofic"
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-400 hover:text-primary transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="text-slate-400 hover:text-primary transition-colors">
@@ -40,12 +45,12 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#sobre" className="text-sm hover:text-white transition-colors">
-                  Sobre Nós
+                  Sobre Mim
                 </a>
               </li>
               <li>
-                <a href="#servicos" className="text-sm hover:text-white transition-colors">
-                  Nossos Serviços
+                <a href="#especialidades" className="text-sm hover:text-white transition-colors">
+                  Especialidades
                 </a>
               </li>
               <li>
@@ -58,12 +63,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Serviços</h3>
+            <h3 className="text-white font-semibold mb-4">Especialidades</h3>
             <ul className="space-y-3">
-              <li className="text-sm text-slate-400">Consultoria Financeira</li>
-              <li className="text-sm text-slate-400">Planejamento Estratégico</li>
-              <li className="text-sm text-slate-400">Gestão de Pessoas</li>
-              <li className="text-sm text-slate-400">Otimização de Processos</li>
+              <li className="text-sm text-slate-400">Consultoria e Gestão</li>
+              <li className="text-sm text-slate-400">Recuperação de Crédito</li>
+              <li className="text-sm text-slate-400">Registro no INPI</li>
+              <li className="text-sm text-slate-400">Direito Previdenciário</li>
+              <li className="text-sm text-slate-400">Assessoria Jurídica</li>
             </ul>
           </div>
 
@@ -74,25 +80,28 @@ export default function Footer() {
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="h-5 w-5 text-primary shrink-0" />
                 <span>
-                  Av. Paulista, 1000 - Bela Vista
+                  Rua Silva Cardoso, 08
                   <br />
-                  São Paulo - SP, 01310-100
+                  Lote 4, Quadra Cinco - RJ
                 </span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span>(11) 99999-9999</span>
+                <span>+55 21 99584-2062</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span>contato@rsconsultoria.com.br</span>
+                <span>rscontatob@gmail.com</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-slate-800 text-center text-sm text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} RS Consultoria. Todos os direitos reservados.</p>
+          <p>
+            © {new Date().getFullYear()} Rafaela Santos do Amaral | RS Consultoria. Todos os
+            direitos reservados.
+          </p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-white transition-colors">
               Política de Privacidade

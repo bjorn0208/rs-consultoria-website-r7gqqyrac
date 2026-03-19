@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, Briefcase } from 'lucide-react'
+import { Menu, Scale } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
@@ -17,8 +17,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Início', href: '#inicio' },
-    { name: 'Sobre Nós', href: '#sobre' },
-    { name: 'Serviços', href: '#servicos' },
+    { name: 'Sobre Mim', href: '#sobre' },
+    { name: 'Especialidades', href: '#especialidades' },
+    { name: 'Blog', href: '#blog' },
     { name: 'Contato', href: '#contato' },
   ]
 
@@ -33,7 +34,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="bg-primary p-2 rounded-lg group-hover:bg-primary/90 transition-colors">
-            <Briefcase className="h-6 w-6 text-primary-foreground" />
+            <Scale className="h-6 w-6 text-primary-foreground" />
           </div>
           <span className="text-xl font-bold tracking-tight text-foreground">
             RS <span className="text-primary">Consultoria</span>
@@ -51,8 +52,8 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          <Button asChild>
-            <a href="#contato">Fale Conosco</a>
+          <Button variant="secondary" asChild>
+            <a href="#contato">Entre em contato comigo</a>
           </Button>
         </nav>
 
@@ -75,8 +76,8 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <Button asChild className="mt-4 w-full">
-                <a href="#contato">Fale Conosco</a>
+              <Button variant="secondary" asChild className="mt-4 w-full">
+                <a href="#contato">Entre em contato comigo</a>
               </Button>
             </nav>
           </SheetContent>
