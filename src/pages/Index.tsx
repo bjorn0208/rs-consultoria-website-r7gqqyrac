@@ -1,6 +1,7 @@
 import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
 import Services from '@/components/sections/Services'
+import { Blog } from '@/components/sections/Blog'
 import Contact from '@/components/sections/Contact'
 
 export default function Index() {
@@ -9,6 +10,7 @@ export default function Index() {
       <Hero />
       <About />
       <Services />
+      <Blog />
       <Contact />
     </div>
   )

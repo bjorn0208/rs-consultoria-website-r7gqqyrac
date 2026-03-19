@@ -33,11 +33,11 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="bg-primary p-2 rounded-lg group-hover:bg-primary/90 transition-colors">
-            <Scale className="h-6 w-6 text-primary-foreground" />
+          <div className="bg-[#b38f07] p-2 rounded-lg group-hover:bg-[#8f7206] transition-colors">
+            <Scale className="h-6 w-6 text-white" />
           </div>
           <span className="text-xl font-bold tracking-tight text-foreground">
-            RS <span className="text-primary">Consultoria</span>
+            RS <span className="text-[#b38f07]">Consultoria</span>
           </span>
         </Link>
 
@@ -47,12 +47,12 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-[#b38f07] transition-colors"
             >
               {link.name}
             </a>
           ))}
-          <Button variant="secondary" asChild>
+          <Button className="bg-[#b38f07] hover:bg-[#8f7206] text-white" asChild>
             <a href="#contato">Entre em contato comigo</a>
           </Button>
         </nav>
@@ -71,12 +71,12 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                  className="text-lg font-medium text-foreground hover:text-[#b38f07] transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
-              <Button variant="secondary" asChild className="mt-4 w-full">
+              <Button className="bg-[#b38f07] hover:bg-[#8f7206] text-white mt-4 w-full" asChild>
                 <a href="#contato">Entre em contato comigo</a>
               </Button>
             </nav>
