@@ -1,65 +1,45 @@
-import { ArrowRight, Scale } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ArrowRight } from 'lucide-react'
+import heroImage from '@/assets/chatgpt-image-19-de-mar.de-2026-04_42_20-8d2e1.png'
 
-export default function Hero() {
+export function Hero() {
   return (
-    <section id="inicio" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-yellow-100/40 via-background to-background dark:from-yellow-900/20 dark:via-background dark:to-background"></div>
-
+    <section
+      id="inicio"
+      className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white"
+    >
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
-          <div className="flex-1 text-center lg:text-left animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary mb-6">
-              <Scale className="h-4 w-4" />
-              <span className="text-sm font-medium">Portfólio Profissional</span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-2 leading-[1.1]">
-              RS <span className="text-primary">CONSULTORIA</span>
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex-1 text-center lg:text-left z-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 leading-tight">
+              Estratégia e Segurança para suas{' '}
+              <span className="text-[#b38f07]">Demandas Jurídicas</span>
             </h1>
-            <h2 className="text-xl md:text-2xl font-semibold text-foreground/80 mb-6 uppercase tracking-wider">
-              Empresarial e Financeira
-            </h2>
-
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-              Atuação estratégica na gestão de demandas jurídicas e administrativas, com foco em
-              soluções eficientes e resultados concretos.
+            <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+              Advocacia especializada, consultoria e gestão estratégica com foco em resultados
+              eficientes e atendimento humanizado.
             </p>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto gap-2" asChild>
-                <a href="#contato">
-                  Entre em contato comigo
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
-                <a href="#sobre">Conheça minha trajetória</a>
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="#contato">
+                <Button className="bg-[#b38f07] hover:bg-[#8f7206] text-white text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all w-full sm:w-auto group">
+                  Fale com a Especialista
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
             </div>
           </div>
-
-          <div className="flex-1 w-full max-w-lg lg:max-w-none animate-fade-in-up delay-200">
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-yellow-400 rounded-2xl blur opacity-30"></div>
+          <div className="flex-1 relative w-full max-w-md lg:max-w-lg mx-auto">
+            <div className="relative rounded-3xl overflow-hidden aspect-[3/4] shadow-2xl border-4 border-white">
+              <div className="absolute inset-0 bg-[#b38f07]/10 mix-blend-multiply z-10"></div>
               <img
-                src="https://img.usecurling.com/p/800/1000?q=confident%20black%20woman%20suit&color=black&dpr=2"
-                alt="Rafaela Santos do Amaral"
-                className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[3/4] border border-border"
+                src={heroImage}
+                alt="Rafaela Santos do Amaral - Advogada"
+                className="object-cover w-full h-full object-top"
               />
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-6 -left-6 bg-background p-4 rounded-xl shadow-xl border border-border hidden md:flex items-center gap-4 animate-float">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                  <Scale className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="font-bold text-foreground">Soluções Eficientes</p>
-                  <p className="text-sm text-muted-foreground">Foco em resultados</p>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10"></div>
             </div>
+            {/* Decorative background element */}
+            <div className="absolute -inset-4 bg-[#b38f07]/10 rounded-3xl -z-10 blur-xl"></div>
           </div>
         </div>
       </div>

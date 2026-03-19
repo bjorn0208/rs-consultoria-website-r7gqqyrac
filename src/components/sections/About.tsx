@@ -1,40 +1,35 @@
-import { CheckCircle2 } from 'lucide-react'
+import aboutImage from '@/assets/chatgpt-image-19-de-mar.de-2026-04_09_03-d7415.png'
 
-export default function About() {
-  const highlights = [
-    'Visão humanizada da justiça',
-    'Organização estratégica de fluxos',
-    'Foco em soluções eficientes e seguras',
-    'Atuação ética e transparente',
-  ]
-
+export function About() {
   return (
-    <section id="sobre" className="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <section id="sobre" className="py-24 bg-slate-50">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="flex-1 order-2 lg:order-1 relative">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3"></div>
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          <div className="flex-1 w-full max-w-md lg:max-w-lg mx-auto">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-[#b38f07]/10 mix-blend-multiply z-10"></div>
               <img
-                src="https://img.usecurling.com/p/600/800?q=woman%20lawyer%20office&color=gray&dpr=2"
-                alt="Advogada no escritório"
-                className="relative rounded-2xl object-cover w-full h-[500px] shadow-xl"
+                src={aboutImage}
+                alt="Rafaela Santos em atuação"
+                className="object-cover w-full h-full"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
             </div>
           </div>
-
-          <div className="flex-1 order-1 lg:order-2">
-            <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary mb-4 text-sm font-medium">
-              Quem Sou Eu
+          <div className="flex-1">
+            <div className="inline-block px-4 py-2 bg-[#b38f07]/10 rounded-full mb-4">
+              <span className="text-[#b38f07] font-semibold tracking-wider uppercase text-sm">
+                Quem Sou Eu
+              </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-slate-900">
               Rafaela Santos do Amaral
             </h2>
-            <h3 className="text-xl text-primary font-medium mb-8">
-              Consultora e Advogada Especialista
+            <h3 className="text-xl md:text-2xl font-medium mb-8 text-[#b38f07]">
+              Advogada Especialista
             </h3>
 
-            <div className="space-y-4 text-lg text-muted-foreground mb-8">
+            <div className="space-y-5 text-slate-700 leading-relaxed text-lg">
               <p>
                 Bacharel em Direito pela Universidade Estácio de Sá, com pós-graduação em Direito
                 Previdenciário e especializações em Direito Civil, Processo Civil e do Consumidor.
@@ -53,20 +48,11 @@ export default function About() {
                 registro de marcas no INPI e atua no Direito Previdenciário com concessão de
                 benefícios.
               </p>
-              <p className="font-medium text-foreground">
+              <p className="font-medium text-slate-900 border-l-4 border-[#b38f07] pl-4">
                 Tem perfil técnico, estratégico e orientado a resultados, com atuação ética e foco
                 em soluções eficientes e seguras.
               </p>
             </div>
-
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {highlights.map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
-                  <span className="text-foreground font-medium">{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>
