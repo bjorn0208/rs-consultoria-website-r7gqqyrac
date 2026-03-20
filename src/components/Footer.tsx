@@ -3,32 +3,35 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-300 py-12 border-t border-slate-900">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-slate-950 text-slate-300 py-10 sm:py-12 border-t border-slate-900">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8 mb-10 sm:mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              <Scale className="h-6 w-6 text-primary" />
+            <Link to="/" className="flex items-center gap-2 inline-flex">
+              <Scale className="h-6 w-6 text-[#b38f07]" />
               <span className="text-xl font-bold text-white">RS Consultoria</span>
             </Link>
-            <p className="text-sm text-slate-400 max-w-xs">
+            <p className="text-sm text-slate-400 max-w-xs leading-relaxed">
               Atuação estratégica na gestão de demandas jurídicas e administrativas, com foco em
               soluções eficientes e resultados concretos.
             </p>
-            <div className="flex gap-4 pt-2">
-              <a href="#" className="text-slate-400 hover:text-primary transition-colors">
+            <div className="flex gap-5 pt-2">
+              <a
+                href="#"
+                className="text-slate-400 hover:text-[#b38f07] transition-colors p-2 -ml-2"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
                 href="https://instagram.com/rafaellas_ofic"
                 target="_blank"
                 rel="noreferrer"
-                className="text-slate-400 hover:text-primary transition-colors"
+                className="text-slate-400 hover:text-[#b38f07] transition-colors p-2"
               >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-primary transition-colors">
+              <a href="#" className="text-slate-400 hover:text-[#b38f07] transition-colors p-2">
                 <Facebook className="h-5 w-5" />
               </a>
             </div>
@@ -36,25 +39,37 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Navegação</h3>
-            <ul className="space-y-3">
+            <h3 className="text-white font-semibold mb-4 text-lg sm:text-base">Navegação</h3>
+            <ul className="space-y-3 sm:space-y-2">
               <li>
-                <a href="#inicio" className="text-sm hover:text-white transition-colors">
+                <a
+                  href="#inicio"
+                  className="text-sm hover:text-white transition-colors py-1 block sm:inline"
+                >
                   Início
                 </a>
               </li>
               <li>
-                <a href="#sobre" className="text-sm hover:text-white transition-colors">
+                <a
+                  href="#sobre"
+                  className="text-sm hover:text-white transition-colors py-1 block sm:inline"
+                >
                   Sobre Mim
                 </a>
               </li>
               <li>
-                <a href="#especialidades" className="text-sm hover:text-white transition-colors">
+                <a
+                  href="#especialidades"
+                  className="text-sm hover:text-white transition-colors py-1 block sm:inline"
+                >
                   Especialidades
                 </a>
               </li>
               <li>
-                <a href="#contato" className="text-sm hover:text-white transition-colors">
+                <a
+                  href="#contato"
+                  className="text-sm hover:text-white transition-colors py-1 block sm:inline"
+                >
                   Contato
                 </a>
               </li>
@@ -63,8 +78,8 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Especialidades</h3>
-            <ul className="space-y-3">
+            <h3 className="text-white font-semibold mb-4 text-lg sm:text-base">Especialidades</h3>
+            <ul className="space-y-3 sm:space-y-2">
               <li className="text-sm text-slate-400">Consultoria e Gestão</li>
               <li className="text-sm text-slate-400">Recuperação de Crédito</li>
               <li className="text-sm text-slate-400">Registro no INPI</li>
@@ -75,23 +90,23 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Contato</h3>
+            <h3 className="text-white font-semibold mb-4 text-lg sm:text-base">Contato</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm">
-                <MapPin className="h-5 w-5 text-primary shrink-0" />
-                <span>
+                <MapPin className="h-5 w-5 text-[#b38f07] shrink-0 mt-0.5" />
+                <span className="leading-relaxed">
                   Rua Silva Cardoso, 08
                   <br />
                   Lote 4, Quadra Cinco - RJ
                 </span>
               </li>
               <li className="flex items-center gap-3 text-sm">
-                <Phone className="h-5 w-5 text-primary shrink-0" />
+                <Phone className="h-5 w-5 text-[#b38f07] shrink-0" />
                 <span>+55 21 99584-2062</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
-                <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span>rscontatob@gmail.com</span>
+                <Mail className="h-5 w-5 text-[#b38f07] shrink-0" />
+                <span className="break-all">rscontatob@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -102,7 +117,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Rafaela Santos do Amaral | RS Consultoria. Todos os
             direitos reservados.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <a href="#" className="hover:text-white transition-colors">
               Política de Privacidade
             </a>

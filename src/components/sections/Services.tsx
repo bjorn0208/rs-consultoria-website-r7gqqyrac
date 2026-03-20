@@ -7,69 +7,71 @@ export default function Services() {
       title: 'Consultoria e Gestão',
       description:
         'Consultoria e Gestão Empresarial, Financeira e Previdenciária para organizar estrategicamente seus fluxos e garantir segurança.',
-      icon: <Briefcase className="h-10 w-10 text-[#b38f07]" />,
+      icon: <Briefcase className="h-8 w-8 sm:h-10 sm:w-10 text-[#b38f07]" />,
     },
     {
       title: 'Recuperação de Crédito',
       description:
         'Expertise na área bancária e financeira, atuando com análise de crédito, recuperação de crédito (CPF e CNPJ) e reestruturação financeira.',
-      icon: <Landmark className="h-10 w-10 text-[#b38f07]" />,
+      icon: <Landmark className="h-8 w-8 sm:h-10 sm:w-10 text-[#b38f07]" />,
     },
     {
       title: 'INPI',
       description:
         'Registro de marcas, patentes e propriedade intelectual, garantindo a proteção e exclusividade do seu negócio no mercado.',
-      icon: <ShieldCheck className="h-10 w-10 text-[#b38f07]" />,
+      icon: <ShieldCheck className="h-8 w-8 sm:h-10 sm:w-10 text-[#b38f07]" />,
     },
     {
       title: 'Direito Previdenciário',
       description:
         'Previdenciário completo: BPC/LOAS, Auxílio-Doença, Aposentadoria e Acerto de CNIS. Concessão de benefícios com agilidade.',
-      icon: <HeartHandshake className="h-10 w-10 text-[#b38f07]" />,
+      icon: <HeartHandshake className="h-8 w-8 sm:h-10 sm:w-10 text-[#b38f07]" />,
     },
     {
       title: 'Assessoria Jurídica',
       description:
         'Assessoria completa para garantir benefícios do INSS. Atuação especializada para garantir que seus direitos previdenciários sejam respeitados e concedidos com agilidade e segurança.',
-      icon: <Scale className="h-10 w-10 text-[#b38f07]" />,
+      icon: <Scale className="h-8 w-8 sm:h-10 sm:w-10 text-[#b38f07]" />,
     },
   ]
 
   return (
-    <section id="especialidades" className="py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-block px-3 py-1 rounded-full bg-[#b38f07]/10 text-[#b38f07] mb-4 text-sm font-medium">
+    <section id="especialidades" className="py-20 lg:py-24 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-block px-3 py-1 rounded-full bg-[#b38f07]/10 text-[#b38f07] mb-4 text-xs sm:text-sm font-medium">
             Especialidades
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-slate-900">
             Serviços Oferecidos
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-base sm:text-lg text-slate-600 px-2 sm:px-0">
             Atuação especializada para proteger seus direitos, organizar seu negócio e garantir
             resultados seguros e eficientes.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <Card
               key={index}
               className="group hover:shadow-lg transition-all duration-300 border-border/50 bg-slate-50 hover:border-[#b38f07]/50 flex flex-col h-full"
             >
-              <CardHeader>
-                <div className="mb-4 bg-[#b38f07]/10 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:bg-[#b38f07]/20 transition-colors">
+              <CardHeader className="p-6">
+                <div className="mb-4 bg-[#b38f07]/10 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center group-hover:bg-[#b38f07]/20 transition-colors">
                   {service.icon}
                 </div>
-                <CardTitle className="text-2xl text-slate-900">{service.title}</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl text-slate-900">
+                  {service.title}
+                </CardTitle>
               </CardHeader>
-              <CardContent className="flex-1 flex flex-col justify-between">
-                <CardDescription className="text-base text-slate-600 mb-6">
+              <CardContent className="p-6 pt-0 flex-1 flex flex-col justify-between">
+                <CardDescription className="text-sm sm:text-base text-slate-600 mb-6">
                   {service.description}
                 </CardDescription>
                 <a
                   href="#contato"
-                  className="inline-flex items-center text-sm font-semibold text-[#b38f07] hover:text-[#8f7206] transition-colors mt-auto"
+                  className="inline-flex items-center text-sm font-semibold text-[#b38f07] hover:text-[#8f7206] transition-colors mt-auto py-2"
                 >
                   Fale com a Especialista <ArrowRight className="ml-2 h-4 w-4" />
                 </a>

@@ -26,58 +26,60 @@ export default function Contact() {
   }
 
   return (
-    <section id="contato" className="py-24 bg-slate-50">
-      <div className="container mx-auto px-4">
+    <section id="contato" className="py-20 lg:py-24 bg-slate-50">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-border">
           <div className="grid grid-cols-1 lg:grid-cols-5">
             {/* Contact Info Sidebar */}
-            <div className="lg:col-span-2 bg-slate-900 text-white p-10 flex flex-col justify-between relative overflow-hidden">
+            <div className="lg:col-span-2 bg-slate-900 text-white p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden">
               <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 rounded-full bg-[#b38f07]/30 blur-3xl"></div>
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-4">Vamos conversar?</h3>
-                <p className="text-slate-300 mb-12">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-4">Vamos conversar?</h3>
+                <p className="text-slate-300 mb-10 sm:mb-12 text-sm sm:text-base">
                   Entre em contato para agendar uma consulta e descobrir como posso ajudar com suas
                   demandas jurídicas ou empresariais.
                 </p>
 
-                <div className="space-y-8">
+                <div className="space-y-6 sm:space-y-8">
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-white/10 rounded-full shrink-0">
-                      <Phone className="h-6 w-6 text-[#b38f07]" />
+                      <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-[#b38f07]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg">WhatsApp / Telefone</h4>
-                      <p className="text-slate-300 mt-1">+55 21 99584-2062</p>
+                      <h4 className="font-semibold text-base sm:text-lg">WhatsApp / Telefone</h4>
+                      <p className="text-slate-300 mt-1 text-sm sm:text-base">+55 21 99584-2062</p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-white/10 rounded-full shrink-0">
-                      <Mail className="h-6 w-6 text-[#b38f07]" />
+                      <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-[#b38f07]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg">E-mail</h4>
-                      <p className="text-slate-300 mt-1">rscontatob@gmail.com</p>
+                      <h4 className="font-semibold text-base sm:text-lg">E-mail</h4>
+                      <p className="text-slate-300 mt-1 text-sm sm:text-base">
+                        rscontatob@gmail.com
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-white/10 rounded-full shrink-0">
-                      <Instagram className="h-6 w-6 text-[#b38f07]" />
+                      <Instagram className="h-5 w-5 sm:h-6 sm:w-6 text-[#b38f07]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg">Instagram</h4>
-                      <p className="text-slate-300 mt-1">@rafaellas_ofic</p>
+                      <h4 className="font-semibold text-base sm:text-lg">Instagram</h4>
+                      <p className="text-slate-300 mt-1 text-sm sm:text-base">@rafaellas_ofic</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-white/10 rounded-full shrink-0">
-                      <MapPin className="h-6 w-6 text-[#b38f07]" />
+                      <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#b38f07]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg">Endereço</h4>
-                      <p className="text-slate-300 leading-relaxed mt-1">
+                      <h4 className="font-semibold text-base sm:text-lg">Endereço</h4>
+                      <p className="text-slate-300 leading-relaxed mt-1 text-sm sm:text-base">
                         Rua Silva Cardoso, 08
                         <br />
                         Lote 4, Quadra Cinco - RJ
@@ -89,49 +91,70 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-3 p-10">
-              <h3 className="text-2xl font-bold mb-6 text-slate-900">Fale com a Especialista</h3>
+            <div className="lg:col-span-3 p-6 sm:p-8 lg:p-10">
+              <h3 className="text-xl sm:text-2xl font-bold mb-6 text-slate-900">
+                Fale com a Especialista
+              </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="nome">Nome Completo</Label>
-                    <Input id="nome" placeholder="Seu nome" required className="bg-slate-50" />
+                    <Label htmlFor="nome" className="text-sm">
+                      Nome Completo
+                    </Label>
+                    <Input
+                      id="nome"
+                      placeholder="Seu nome"
+                      required
+                      className="bg-slate-50 h-11 sm:h-10"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="assunto">Assunto</Label>
-                    <Input id="assunto" placeholder="Ex: Consultoria" className="bg-slate-50" />
+                    <Label htmlFor="assunto" className="text-sm">
+                      Assunto
+                    </Label>
+                    <Input
+                      id="assunto"
+                      placeholder="Ex: Consultoria"
+                      className="bg-slate-50 h-11 sm:h-10"
+                    />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="email">E-mail</Label>
+                    <Label htmlFor="email" className="text-sm">
+                      E-mail
+                    </Label>
                     <Input
                       id="email"
                       type="email"
                       placeholder="seu@email.com"
                       required
-                      className="bg-slate-50"
+                      className="bg-slate-50 h-11 sm:h-10"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="telefone">Telefone / WhatsApp</Label>
+                    <Label htmlFor="telefone" className="text-sm">
+                      Telefone / WhatsApp
+                    </Label>
                     <Input
                       id="telefone"
                       placeholder="(00) 00000-0000"
                       required
-                      className="bg-slate-50"
+                      className="bg-slate-50 h-11 sm:h-10"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="mensagem">Como posso ajudar?</Label>
+                  <Label htmlFor="mensagem" className="text-sm">
+                    Como posso ajudar?
+                  </Label>
                   <Textarea
                     id="mensagem"
                     placeholder="Descreva brevemente sua necessidade..."
-                    className="min-h-[150px] bg-slate-50 resize-none"
+                    className="min-h-[120px] sm:min-h-[150px] bg-slate-50 resize-none"
                     required
                   />
                 </div>
@@ -139,7 +162,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full md:w-auto gap-2 bg-[#b38f07] hover:bg-[#8f7206] text-white"
+                  className="w-full md:w-auto gap-2 bg-[#b38f07] hover:bg-[#8f7206] text-white h-12 sm:h-11"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}

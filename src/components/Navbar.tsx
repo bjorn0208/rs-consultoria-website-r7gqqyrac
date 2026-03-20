@@ -6,6 +6,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,12 +32,12 @@ export default function Navbar() {
           : 'bg-transparent border-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="bg-[#b38f07] p-2 rounded-lg group-hover:bg-[#8f7206] transition-colors">
-            <Scale className="h-6 w-6 text-white" />
+            <Scale className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-foreground">
+          <span className="text-lg sm:text-xl font-bold tracking-tight text-foreground">
             RS <span className="text-[#b38f07]">Consultoria</span>
           </span>
         </Link>
@@ -53,30 +54,35 @@ export default function Navbar() {
             </a>
           ))}
           <Button className="bg-[#b38f07] hover:bg-[#8f7206] text-white" asChild>
-            <a href="#contato">Entre em contato comigo</a>
+            <a href="#contato">Entre em contato</a>
           </Button>
         </nav>
 
         {/* Mobile Nav */}
-        <Sheet>
+        <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+          <SheetContent side="right" className="w-[300px] sm:w-[350px]">
             <nav className="flex flex-col gap-6 mt-12">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-medium text-foreground hover:text-[#b38f07] transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-lg font-medium text-foreground hover:text-[#b38f07] transition-colors py-2"
                 >
                   {link.name}
                 </a>
               ))}
-              <Button className="bg-[#b38f07] hover:bg-[#8f7206] text-white mt-4 w-full" asChild>
+              <Button
+                className="bg-[#b38f07] hover:bg-[#8f7206] text-white mt-4 w-full h-12 text-base"
+                asChild
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 <a href="#contato">Entre em contato comigo</a>
               </Button>
             </nav>

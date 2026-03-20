@@ -2,34 +2,34 @@ import aboutImage from '@/assets/chatgpt-image-19-de-mar.de-2026-04_09_03-d7415.
 
 export function About() {
   return (
-    <section id="sobre" className="py-24 bg-slate-50">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          <div className="flex-1 w-full max-w-md lg:max-w-lg mx-auto">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+    <section id="sobre" className="py-20 lg:py-24 bg-slate-50">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+          <div className="flex-1 w-full max-w-[280px] sm:max-w-[340px] md:max-w-md lg:max-w-lg mx-auto mb-2 lg:mb-0">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-auto lg:h-[600px]">
               <div className="absolute inset-0 bg-[#b38f07]/10 mix-blend-multiply z-10"></div>
               <img
                 src={aboutImage}
                 alt="Rafaela Santos em atuação"
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
             </div>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 text-center lg:text-left">
             <div className="inline-block px-4 py-2 bg-[#b38f07]/10 rounded-full mb-4">
-              <span className="text-[#b38f07] font-semibold tracking-wider uppercase text-sm">
+              <span className="text-[#b38f07] font-semibold tracking-wider uppercase text-xs sm:text-sm">
                 Quem Sou Eu
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-slate-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-slate-900">
               Rafaela Santos do Amaral
             </h2>
-            <h3 className="text-xl md:text-2xl font-medium mb-8 text-[#b38f07]">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-medium mb-6 sm:mb-8 text-[#b38f07]">
               Advogada Especialista
             </h3>
 
-            <div className="space-y-5 text-slate-700 leading-relaxed text-lg">
+            <div className="space-y-4 sm:space-y-5 text-slate-700 leading-relaxed text-base sm:text-lg text-left px-2 sm:px-0">
               <p>
                 Bacharel em Direito pela Universidade Estácio de Sá, com pós-graduação em Direito
                 Previdenciário e especializações em Direito Civil, Processo Civil e do Consumidor.
@@ -48,7 +48,7 @@ export function About() {
                 registro de marcas no INPI e atua no Direito Previdenciário com concessão de
                 benefícios.
               </p>
-              <p className="font-medium text-slate-900 border-l-4 border-[#b38f07] pl-4">
+              <p className="font-medium text-slate-900 border-l-4 border-[#b38f07] pl-4 py-1 mt-6">
                 Tem perfil técnico, estratégico e orientado a resultados, com atuação ética e foco
                 em soluções eficientes e seguras.
               </p>
