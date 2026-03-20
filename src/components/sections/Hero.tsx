@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import heroImage from '@/assets/design-sem-nome-1-910f5.png'
 
-export default function Hero() {
+export function Hero() {
   return (
     <section
       id="inicio"
