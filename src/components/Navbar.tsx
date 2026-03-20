@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Menu, Scale } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Menu, X } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -18,77 +16,89 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Início', href: '#inicio' },
-    { name: 'Sobre Mim', href: '#sobre' },
-    { name: 'Especialidades', href: '#especialidades' },
+    { name: 'Sobre', href: '#sobre' },
+    { name: 'Serviços', href: '#servicos' },
     { name: 'Blog', href: '#blog' },
-    { name: 'Contato', href: '#contato' },
   ]
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-border shadow-sm'
-          : 'bg-transparent border-transparent'
-      }`}
+          ? 'bg-black/95 backdrop-blur-md py-4 border-b border-white/10 shadow-lg'
+          : 'bg-transparent py-5 md:py-6',
+      )}
     >
-      <div className="container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="bg-[#b38f07] p-2 rounded-lg group-hover:bg-[#8f7206] transition-colors">
-            <Scale className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-          </div>
-          <span className="text-lg sm:text-xl font-bold tracking-tight text-foreground">
-            RS <span className="text-[#b38f07]">Consultoria</span>
-          </span>
-        </Link>
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between">
+          {/* Logo text fallback */}
+          <a
+            href="#inicio"
+            className="text-xl md:text-2xl font-bold tracking-wider text-white flex items-center gap-1 group"
+          >
+            <span className="text-[#b38f07] group-hover:text-white transition-colors duration-300">
+              RS
+            </span>
+            <span className="group-hover:text-[#b38f07] transition-colors duration-300">
+              Consultoria
+            </span>
+          </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-xs md:text-sm uppercase tracking-[0.2em] text-gray-300 hover:text-[#b38f07] transition-colors font-medium"
+              >
+                {link.name}
+              </a>
+            ))}
             <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-[#b38f07] transition-colors"
+              href="#contato"
+              className="ml-2 px-6 py-2.5 text-xs md:text-sm uppercase tracking-widest bg-[#b38f07] text-white font-semibold hover:bg-[#8f7205] transition-all duration-300 rounded-sm"
             >
-              {link.name}
+              Contato
             </a>
-          ))}
-          <Button className="bg-[#b38f07] hover:bg-[#8f7206] text-white" asChild>
-            <a href="#contato">Entre em contato</a>
-          </Button>
-        </nav>
+          </nav>
 
-        {/* Mobile Nav */}
-        <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-6 w-6" />
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[350px]">
-            <nav className="flex flex-col gap-6 mt-12">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-[#b38f07] transition-colors py-2"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <Button
-                className="bg-[#b38f07] hover:bg-[#8f7206] text-white mt-4 w-full h-12 text-base"
-                asChild
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden text-white p-2 hover:text-[#b38f07] transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Nav */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-black/98 backdrop-blur-xl border-b border-white/10 animate-fade-in-down shadow-2xl">
+          <nav className="flex flex-col py-6 px-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="py-4 text-center text-base uppercase tracking-widest text-gray-200 hover:text-[#b38f07] border-b border-white/5 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <a href="#contato">Entre em contato comigo</a>
-              </Button>
-            </nav>
-          </SheetContent>
-        </Sheet>
-      </div>
+                {link.name}
+              </a>
+            ))}
+            <a
+              href="#contato"
+              className="mt-8 mx-auto w-full max-w-xs px-8 py-4 text-sm uppercase tracking-widest bg-[#b38f07] text-white font-semibold text-center rounded-sm hover:bg-[#8f7205] transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Falar pelo WhatsApp
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   )
 }

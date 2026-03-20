@@ -1,50 +1,45 @@
 import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
-import heroImage from '@/assets/chatgpt-image-19-de-mar.de-2026-04_42_20-8d2e1.png'
+import heroImage from '@/assets/design-sem-nome-1-910f5.png'
 
-export function Hero() {
+export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative pt-28 pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-white"
+      className="relative w-full bg-black pt-28 pb-16 md:pt-36 md:pb-24 flex items-center justify-center min-h-[100svh] overflow-hidden"
     >
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-          {/* Mobile Image (shown first on mobile, right on desktop) */}
-          <div className="flex-1 relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-lg mx-auto order-1 lg:order-2 mt-4 lg:mt-0">
-            <div className="relative rounded-3xl overflow-hidden aspect-[3/4] shadow-2xl border-4 border-white">
-              <div className="absolute inset-0 bg-[#b38f07]/10 mix-blend-multiply z-10"></div>
-              <img
-                src={heroImage}
-                alt="Rafaela Santos do Amaral - Advogada"
-                className="object-cover w-full h-full object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10"></div>
-            </div>
-            <div className="absolute -inset-4 bg-[#b38f07]/10 rounded-3xl -z-10 blur-xl"></div>
-          </div>
+      {/* Subtle background glow to highlight the logo */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[70%] h-[70%] max-w-3xl bg-[#b38f07]/10 blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
 
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left z-10 order-2 lg:order-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-slate-900 leading-tight">
-              Estratégia e Segurança para suas{' '}
-              <span className="text-[#b38f07]">Demandas Jurídicas</span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 px-2 sm:px-0">
-              Advocacia especializada, consultoria e gestão estratégica com foco em resultados
-              eficientes e atendimento humanizado.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start px-4 sm:px-0">
-              <a href="#contato" className="w-full sm:w-auto">
-                <Button className="bg-[#b38f07] hover:bg-[#8f7206] text-white text-base sm:text-lg px-6 sm:px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all w-full group">
-                  Fale com a Especialista
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </a>
-            </div>
+      <div className="container mx-auto px-4 sm:px-6 flex flex-col items-center relative z-10 w-full h-full justify-center gap-10 md:gap-14">
+        {/* Main Logo / Image */}
+        <div className="w-full max-w-5xl mx-auto animate-fade-in-up flex justify-center">
+          <img
+            src={heroImage}
+            alt="RS Consultoria Empresarial e Financeira"
+            className="w-full h-auto object-contain max-h-[50vh] md:max-h-[65vh] drop-shadow-2xl scale-100 transition-transform duration-700 hover:scale-[1.02]"
+          />
+        </div>
+
+        {/* Content / CTA */}
+        <div className="text-center animate-fade-in flex flex-col items-center space-y-8 mt-4">
+          <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-xl font-light leading-relaxed px-2">
+            Consultoria estratégica especializada para estruturar, proteger e alavancar os
+            resultados da sua empresa com excelência e segurança.
+          </p>
+          <div className="animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+            <Button
+              size="lg"
+              className="bg-[#b38f07] hover:bg-[#8f7205] text-white font-semibold px-8 py-6 text-sm md:text-base rounded-sm uppercase tracking-widest transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_20px_rgba(179,143,7,0.3)]"
+              asChild
+            >
+              <a href="#contato">Agendar Atendimento</a>
+            </Button>
           </div>
         </div>
       </div>
+
+      {/* Bottom gradient fade for seamless transition to next section */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
     </section>
   )
 }
